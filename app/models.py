@@ -24,5 +24,6 @@ class Messages(db.Model):
     # write __repr__ that outputs
     # <Message: MESSAGE_GOES_HERE>
     # replace MESSAGE_GOES_HERE with the message
+
     def __repr__(self):
-        return '<Message {}'.format(self.body)
+        return '<Message {self.message}'
