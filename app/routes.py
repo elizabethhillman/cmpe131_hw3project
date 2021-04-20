@@ -17,7 +17,7 @@ def home():
             user = User(author=form.author.data)
             db.session.add(user)
         # create row in Message table with user (created/found) add to ta database
-        row = Messages(message = form.message.data, user_id = user.id)
+            row = Messages(message = form.message.data, user_id = user.id)
 
     posts = [
         { 'author' : 'Carlos','message': 'Yo! Where you at?!'},
