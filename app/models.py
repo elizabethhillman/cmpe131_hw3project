@@ -7,7 +7,7 @@ class User(db.Model):
     # author (string, unique, can't be null)
     author = db.Column(db.String, nullable = False, unique = True)
     # message (linkd to Messages table)
-    message = db.relationship('Message', backref = 'User')
+    message = db.relationship('Message', backref = 'User', lazy = 'dynamic')
 
     def __repr__(self):
         return f'<User {self.author}>'
@@ -26,4 +26,4 @@ class Messages(db.Model):
     # replace MESSAGE_GOES_HERE with the message
 
     def __repr__(self):
-        return '<Message {self.message}'
+        return '<Message {self.body}>'
