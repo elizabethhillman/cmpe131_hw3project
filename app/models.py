@@ -7,7 +7,7 @@ class User(db.Model):
     # author (string, unique, can't be null)
     author = db.Column(db.String, nullable = False, unique = True)
     # message (linkd to Messages table)
-    message = db.relationship('Message', backref = 'User', lazy = 'dynamic')
+    message = db.relationship('Messages', backref = 'User', lazy = 'dynamic')
 
     def __repr__(self):
         return '<User {}>'.format(self.author)
