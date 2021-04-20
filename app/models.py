@@ -10,7 +10,7 @@ class User(db.Model):
     message = db.relationship('Message', backref = 'User', lazy = 'dynamic')
 
     def __repr__(self):
-        return f'<User {self.author}>'
+        return '<User {}>'.format(self.author)
 
 class Messages(db.Model):
     # have the following columns
@@ -26,4 +26,4 @@ class Messages(db.Model):
     # replace MESSAGE_GOES_HERE with the message
 
     def __repr__(self):
-        return '<Message {self.body}>'
+        return '<Message {}>'.format(self.body)
