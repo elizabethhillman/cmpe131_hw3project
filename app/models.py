@@ -19,7 +19,7 @@ class Messages(db.Model):
     # message (string, not unique, can't be null)
     message = db.Column(db.String, nullable = False, unique = False)
     # user_id link to id (int)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     # write __repr__ that outputs
     # <Message: MESSAGE_GOES_HERE>
