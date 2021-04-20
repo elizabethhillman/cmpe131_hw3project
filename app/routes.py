@@ -6,7 +6,7 @@ from app.forms import MessageForm
 from app.models import User, Messages
 
 # add route '/' and also add the two methods to handle request: 'GET' and 'POST'
-@myapp_obj.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def home():
     form=MessageForm()
     if form.validate_on_submit():
