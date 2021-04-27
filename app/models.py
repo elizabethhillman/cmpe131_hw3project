@@ -1,5 +1,6 @@
 from app import db
 
+'''sets a colum for user data (id and the author name) in the db, links authors message to their name'''
 class User(db.Model):
     # have the following columns
     # id (int)
@@ -9,9 +10,11 @@ class User(db.Model):
     # message (linkd to Messages table)
     message = db.relationship('Messages', backref = 'User', lazy = 'dynamic')
 
+    '''returns the author'''
     def __repr__(self):
         return '<User {}>'.format(self.author)
 
+'''creates column for message data (id, message, & user_id) in db'''
 class Messages(db.Model):
     # have the following columns
     # id (int)
@@ -25,5 +28,6 @@ class Messages(db.Model):
     # <Message: MESSAGE_GOES_HERE>
     # replace MESSAGE_GOES_HERE with the message
 
+    '''returns the message'''
     def __repr__(self):
         return '<Message: {}>'.format(self.body)
