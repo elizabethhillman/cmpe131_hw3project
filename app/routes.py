@@ -18,7 +18,7 @@ def home():
             db.session.add(user)
             db.session.commit()
         # create row in Message table with user (created/found) add to ta database
-            row = Messages(message = form.message.data, user_id = User.query.filter_by(author=form.author.data).first().id)
+            row = Messages(message = form.message.data, user_id = user.id)
             db.session.add(row)
             db.session.commit()
 
